@@ -1,0 +1,22 @@
+{
+  "name": "capstone",
+  "version": "1.0.0",
+  "description": "SAI Redesigned",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rokrebs/CIS4595.git"
+  },
+  "author": "Functional Bits",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rokrebs/CIS4595/issues"
+  },
+  "homepage": "https://github.com/rokrebs/CIS4595#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
