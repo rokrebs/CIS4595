@@ -41,3 +41,5 @@ const Student = mongoose.model('Student', studentSchema);
 Student.find({name: 'Dean'}, function(err,docs) {
     console.log("Query return for \"name: Dean\"\n" + docs);
 });
+
+mongoose.disconnect();
