@@ -5,7 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node index.js",
+    "start-dev": "nodemon indes.js"
   },
   "repository": {
     "type": "git",
