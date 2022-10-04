@@ -1,15 +1,9 @@
 import express from 'express';
-import path, { dirname } from 'path';
-import {fileURLToPath} from 'url';
+import { loginView, handleLogin } from '../controllers/LoginController.js';
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-
-    res.status(200);
-    res.sendFile(path.join(dirname(fileURLToPath(import.meta.url)), '../resources/views/login.html'));
-
-});
+router.get('/', loginView);
 
 
 export {
