@@ -1,9 +1,10 @@
+import bodyParser from 'body-parser';
 import {mongoose} from 'mongoose';
 import path, { dirname } from 'path';
 import {fileURLToPath} from 'url';
 
 
-
+//Get request for login page
 const loginView = (req, res) => {
 
     res.status(200);
@@ -11,12 +12,13 @@ const loginView = (req, res) => {
 
 };
 
-const handleLogin = (req, res) => {
+//Post request for logging in users
+const handleLogin = async (req, res) => {
+    
+    console.log(req.body);
+    res.status(200);
+    res.send(`Username: ${req.body.username} Password: ${req.body.password}`);
 
-    let username = req.body.username;
-    let password = req.body.password;
-    loginQuery(username, password);
-    res.send(`Username: ${username} Password: ${password}`);
 
 };
 
