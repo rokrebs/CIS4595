@@ -7,5 +7,5 @@ router.get('/', loginView);
 router.post('/login', handleLogin);
 
 export {
-    router
+  router,
 };
