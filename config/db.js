@@ -1,4 +1,3 @@
-
 import {mongoose} from 'mongoose'
 
 
@@ -12,6 +11,7 @@ const db = mongoose.connect('mongodb+srv://dg114:test@cluster0.iwvkvt3.mongodb.n
     console.log("Could not start/connect to server/database");   
     mongoose.disconnect();
 });
+
 
 export {
     db

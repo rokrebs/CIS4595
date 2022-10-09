@@ -1,0 +1,10 @@
+Students:
+    dg1 : abcd
+    rk1 : loop
+    nr1 : htmlcss
+    js1 : cyber
+Classes:
+    COP2000 : dg1
+    MAT3000 : dg1, rk1
+    COP4420 : nr1, rk1
+    CYB4444 : js1, dg1
