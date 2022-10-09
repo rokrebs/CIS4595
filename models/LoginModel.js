@@ -6,17 +6,19 @@ import { db } from '../config/db.js';
 const studentSchema = new mongoose.Schema ({name: String, user: String, pass: String});
 const Student = mongoose.model('Student', studentSchema);
 
-
-// Query for the saved student
-const query = function() {
-    Student.find({name: 'Dean'}, function(err,docs) {
-        console.log("Query return for \"name: Dean\"\n" + docs);
+// Query for the logging student
+const login = function(userName, password) {
+    Student.find({user: userName}, 'pass', function(err,docs) {
+        var hashedPass = docs[0]['pass'];
+        console.log(bcrypt.compareSync(password,hashedPass));
     });
     
     mongoose.disconnect();
 }
 
+//test
+login('dg1','abcd');
 
 export {
-    query
+    login
 };
