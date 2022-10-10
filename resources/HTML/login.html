@@ -9,7 +9,6 @@
     <link href="CSS/style.css" rel="stylesheet">
 </head>
 <body>
-    
     <section class="vh-100" style="background-image: url('images/UWFLogo.jpg');">
         <div class="container py-5 h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
@@ -18,13 +17,13 @@
                 <div class="card-body p-5 text-center">
       
                   <h3 class="mb-5">Sign in</h3>
-                    <form action="/login" method="POST">
+                    <form action="/" method="POST">
                       <div class="form-outline mb-4">
                         <input type="username" name="username" id="loginUsername" class="form-control form-control-lg" />
                         <label class="form-label" for="loginUsername">Username</label>
                       </div>
           
-                      <div class="form-outline mb-4">
+                      <div class="form-outline mb-4" id="credentialsDiv">
                         <input type="password" name="password" id="loginPassword" class="form-control form-control-lg" />
                         <label class="form-label" for="loginPassword">Password</label>
                       </div>

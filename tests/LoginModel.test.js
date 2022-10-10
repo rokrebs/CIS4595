@@ -1,5 +1,5 @@
 import request from 'supertest';
-import { jest } from '@jest/globals';
+import * as jest from '@jest/globals';
 import { create } from 'node:domain';
 import { body } from 'express-validator';
 import login from '../models/LoginModel.js';
