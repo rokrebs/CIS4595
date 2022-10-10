@@ -10,6 +10,6 @@ const db = mongoose.connect('mongodb+srv://dg114:test@cluster0.iwvkvt3.mongodb.n
     mongoose.disconnect();
   });
 
-export {
-  db,
-};
+  export {
+    db,
+  };
