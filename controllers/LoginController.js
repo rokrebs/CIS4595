@@ -2,7 +2,7 @@ import bodyParser from 'body-parser';
 import { mongoose } from 'mongoose';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
-import validationResult from 'express-validator';
+import {validationResult} from 'express-validator';
 import { studentModel } from '../models/StudentModel.js';
 import * as bcrypt from 'bcrypt';
 
@@ -16,6 +16,12 @@ function loginView(req, res) {
 //Post request for logging in users
 const handleLogin =  async (req, res) => {
     try{
+        
+        const errors = validationResult(req);
+        if(!errors.isEmpty()) {
+            res.status(422).json({ errors: errors.array() });
+        }
+
         console.log(req.body);
         const { username, password } = req.body;
         
