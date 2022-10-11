@@ -1,4 +1,4 @@
-import { db } from '../config/db.js';
+const mongoose = require('mongoose');
 
 // Class model for DB
 const classSchema = new mongoose.Schema ({name: String, code: String, students: Array});
@@ -6,6 +6,4 @@ const classSchema = new mongoose.Schema ({name: String, code: String, students: 
 const classModel = mongoose.model('Class', classSchema);
 
 // Runs above query with successful results
-export {
-    classModel
-};
+module.exports = classModel;

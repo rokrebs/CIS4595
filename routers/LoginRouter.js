@@ -1,11 +1,10 @@
-import express from 'express';
-import { loginView, handleLogin } from '../controllers/LoginController.js';
+const express = require('express')
+const login = require('../controllers/LoginController.js');
 
 const router = express.Router();
 
-router.get('/', loginView);
-router.post('/', handleLogin);
+router.get('/', login.loginView);
+router.get('/invalidCredentials', login.invalidCredentials);
+router.post('/', login.handleLogin);
 
-export {
-  router,
-};
+module.exports = router;
