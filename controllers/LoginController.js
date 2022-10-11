@@ -12,6 +12,11 @@ function loginView(req, res) {
   res.sendFile(path.join(__dirname, '../resources/HTML/login.html'));
 }
 
+function invalidCredentials(req, res) {
+    res.status(200);
+    res.sendFile(path.join(__dirname, '../resources/HTML/invalidCredentials.html'));
+}
+
 //Post request for logging in users
 const handleLogin =  async (req, res) => {
     try{
@@ -29,20 +34,19 @@ const handleLogin =  async (req, res) => {
 
         //Checks for user in database
         if(!student){
-           return res.status(401).json({ message: "Invalid Credentials" });
+            return res.redirect(encodeURIComponent('InvalidCredentials'));
         }
 
         //Checks for valid password
         bcrypt.compare(password, student.pass, (err, result) => {
             
             if (result) {
-              return res.status(200).json({ message: "User Logged in Successfully" });
+                return res.status(200).json({ message: "User Logged in Successfully" });
             }
             
             console.log(err);
 
-        
-            return res.status(401).json({ message: "Invalid Credentials" });
+            return res.redirect(encodeURIComponent('InvalidCredentials'));
         });
     } catch (error) {
         res.status(401).send(error.message);
@@ -70,6 +74,7 @@ function updateCoursesComponent(numCourses, courses)
 
 module.exports = {
     loginView,
-    handleLogin
+    handleLogin,
+    invalidCredentials
 };
 
