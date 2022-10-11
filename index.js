@@ -1,12 +1,12 @@
-import express from 'express';
-import path from 'path';
-import bodyParser from 'body-parser';
-import { check } from 'express-validator'
-import { router } from './routers/LoginRouter.js';
-import { db } from './config/db.js';
-import { customLimiter } from './customLimitter.js';
-import cookieParser from 'cookie-parser';
-import helmet from 'helmet';
+const express = require('express')
+const path = require('path');
+const bodyParser = require('body-parser');
+const validator = require('express-validator')
+const loginRouter = require('./routers/LoginRouter.js');
+const db = require('./config/db.js');
+const customLimiter = require('./customLimitter.js');
+const cookieParser =  require('cookie-parser');
+const helmet = require('helmet');
 
 const PORT = 3000;
 
@@ -24,12 +24,12 @@ app.use(helmet.hidePoweredBy());
 //app.use(customLimiter);
 
 const loginValidator = [
-  check('username', 'Username should be a UWF userID').isLength({ min: 3, max: 5 }).trim().escape(),
-  check('password', 'Password should be more than 4 characters!').isLength({ min: 4 }).trim().escape(),
+  validator.check('username', 'Username should be a UWF userID').isLength({ min: 3, max: 5 }).trim().escape(),
+  validator.check('password', 'Password should be more than 4 characters!').isLength({ min: 4 }).trim().escape(),
 ];
 
 /**** ROUTERS ****/
-app.use('/', loginValidator, router);
+app.use('/', loginValidator, loginRouter);
 
 
 /**** SERVER ****/
@@ -37,4 +37,4 @@ app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
 
-export default app;
+//export default app;

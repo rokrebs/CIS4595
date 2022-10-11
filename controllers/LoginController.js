@@ -1,23 +1,22 @@
-import bodyParser from 'body-parser';
-import { mongoose } from 'mongoose';
-import path, { dirname } from 'path';
-import { fileURLToPath } from 'url';
-import {validationResult} from 'express-validator';
-import { studentModel } from '../models/StudentModel.js';
-import * as bcrypt from 'bcrypt';
+const bodyparser = require('body-parser');
+const mongoose = require('mongoose');
+const path = require('path');
+const validator = require('express-validator');
+const studentModel = require('../models/StudentModel.js');
+const bcrypt = require('bcrypt');
 
 
 // Get request for login page
 function loginView(req, res) {
   res.status(200);
-  res.sendFile(path.join(dirname(fileURLToPath(import.meta.url)), '../resources/HTML/login.html'));
+  res.sendFile(path.join(__dirname, '../resources/HTML/login.html'));
 }
 
 //Post request for logging in users
 const handleLogin =  async (req, res) => {
     try{
         
-        const errors = validationResult(req);
+        const errors = validator.validationResult(req);
         if(!errors.isEmpty()) {
             res.status(422).json({ errors: errors.array() });
         }
@@ -69,7 +68,8 @@ function updateCoursesComponent(numCourses, courses)
     }
 }
 
-export {
-  loginView,
-  handleLogin,
+module.exports = {
+    loginView,
+    handleLogin
 };
+

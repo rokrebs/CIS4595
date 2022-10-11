@@ -1,4 +1,4 @@
-import { mongoose } from 'mongoose';
+const mongoose = require('mongoose');
 
 // Start Server & Database Connection
 // Note the dg114:test part is the user pass for database
@@ -14,6 +14,4 @@ const db = mongoose.connect('mongodb+srv://dg114:test@cluster0.iwvkvt3.mongodb.n
     mongoose.disconnect();
 });
 
-  export {
-    db,
-  };
+module.exports = db;

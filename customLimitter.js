@@ -1,12 +1,12 @@
-import moment from 'moment';
-import redis from 'redis';
+const moment = require('moment')
+const redis =  require('redis');
 
 const redis_client = redis.createClient();
 const WINDOW_DURATION_IN_HOURS = 24;
 const MAX_WINDOW_REQUEST_COUNT = 100;
 const WINDOW_LOG_DURATION_IN_HOURS = 1;
 
-export const customLimiter = (req, res, next) => {
+const customLimiter = (req, res, next) => {
   try {
     // Checks if the Redis client is present
     if (!redis_client) {
@@ -68,3 +68,5 @@ export const customLimiter = (req, res, next) => {
     next(error);
   }
 };
+
+module.exports = customLimiter;
