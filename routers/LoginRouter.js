@@ -4,9 +4,10 @@ const csrf = require('csurf');
 
 const router = express.Router();
 
-router.use(csrf())
+//Login Routes
 router.get('/', login.loginView);
 router.get('/invalidCredentials', login.invalidCredentials);
 router.post('/', login.handleLogin);
+
 
 module.exports = router;
