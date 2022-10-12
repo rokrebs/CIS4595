@@ -7,9 +7,9 @@
     "node": ">=18.10.0"
   },
   "scripts": {
-    "test": "jest --detectOpenHandles --runInBand --detectOpenHandles --forceExit",
+    "test": "jest --runInBand --detectOpenHandles --forceExit",
     "start": "nodemon index.js",
-    "start-dev": "nodemon indes.js"
+    "start-dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",

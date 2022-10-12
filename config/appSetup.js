@@ -2,8 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const helmet = require('helmet');
-const loginRouter = require('./routers/LoginRouter.js');
-const limiter = require('./rateLimiter.js');
+const loginRouter = require('../routers/LoginRouter.js');
+const limiter = require('../rateLimiter.js');
 
 const app = express();
 
