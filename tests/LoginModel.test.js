@@ -1,8 +1,4 @@
-import request from 'supertest';
-import * as jest from '@jest/globals';
-import { create } from 'node:domain';
-import { body } from 'express-validator';
-import login from '../models/LoginModel.js';
+const login = require("../models/StudentModel.js");
 
 const loginUser = jest.fn();
 

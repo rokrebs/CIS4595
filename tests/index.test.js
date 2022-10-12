@@ -1,7 +1,5 @@
-import { expectCt } from 'helmet';
-import { request } from 'http';
-import supertest from 'supertest';
-import app from '../index.js';
+const expectCt = require("helmet");
+const app = require("../index");
 
 describe('POST /login', () => {
   describe('given a username and passwrod', () => {

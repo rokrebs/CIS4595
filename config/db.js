@@ -5,13 +5,12 @@ const mongoose = require('mongoose');
 // this will need to be hidden perhaps using enviroment variables
 // reminder to change
 const db = mongoose.connect('mongodb+srv://dg114:test@cluster0.iwvkvt3.mongodb.net/?retryWrites=true&w=majority')
-.then((err) => {
-    console.log("I am connected to the database!");
-
-})
-.catch((err)=>{
-    console.log("Could not start/connect to server/database");   
+  .then((err) => {
+    console.log('I am connected to the database!');
+  })
+  .catch((err) => {
+    console.log('Could not start/connect to server/database');
     mongoose.disconnect();
-});
+  });
 
 module.exports = db;

@@ -3,7 +3,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const loginRouter = require('./routers/LoginRouter.js');
 const db = require('./config/db.js');
-const customLimiter = require('./customLimitter.js');
+const limiter = require('./rateLimiter.js');
 const cookieParser =  require('cookie-parser');
 const helmet = require('helmet');
 
@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 /**** SECURITY MIDDLEWARE ****/
 app.use(cookieParser());
 app.use(helmet.hidePoweredBy());
-//app.use(customLimiter);
+app.use(limiter);
 
 /**** ROUTERS ****/
 app.use('/', loginRouter);
