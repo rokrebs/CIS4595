@@ -41,7 +41,7 @@ const handleLogin =  async (req, res) => {
         bcrypt.compare(password, student.pass, (err, result) => {
             
             if (result) {
-                return res.status(200).json({ message: "User Logged in Successfully" });
+                return res.status(200).redirect(encodeURIComponent('courses'));
             }
             
             console.log(err);
@@ -53,24 +53,6 @@ const handleLogin =  async (req, res) => {
         console.log("Error in db");
     }
 };
-
-function updateCoursesComponent(numCourses, courses)
-{
-    for(i = 0; i < numCourses; i++){
-	    var newLi = document.createElement("li");
-	    newLi.className = "courseList";
-        newLi.innerHTML = `<li> 
-            <div class="card text-white bg-secondary mb-3" style="max-height: 10vh;">
-                <h3 class="card-title-top">${courses[i].courseName}</h3>
-                <div class="card-body">
-                    <p class="card-text ">${courses[i].courseDescription}</p>
-                </div>
-            </div>
-        </li>`;
-	    list.appendChild(newLi);
-
-    }
-}
 
 module.exports = {
     loginView,
