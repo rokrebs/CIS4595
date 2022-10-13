@@ -5,7 +5,10 @@ node_modules/
 .npm
 
 #environment variables
-.env
+#.env
 
 #Packages
 package-lock.json
+
+# Repo
+repository.json

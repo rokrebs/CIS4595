@@ -8,7 +8,6 @@ const pointSchema = new mongoose.Schema ({
     }, 
     points: {
         type: Number,
-        required: true
     }
 });
 

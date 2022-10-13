@@ -4,6 +4,7 @@ const path = require('path');
 const validator = require('express-validator');
 const studentModel = require('../models/StudentModel.js');
 const bcrypt = require('bcrypt');
+const repo = require('../repo/Repo');
 
 
 // Get request for login page
@@ -20,7 +21,6 @@ function invalidCredentials(req, res) {
 //Post request for logging in users
 const handleLogin =  async (req, res) => {
     try{
-        
         const errors = validator.validationResult(req);
         if(!errors.isEmpty()) {
             res.status(422).json({ errors: errors.array() });
@@ -41,6 +41,8 @@ const handleLogin =  async (req, res) => {
         bcrypt.compare(password, student.pass, (err, result) => {
             
             if (result) {
+                const session = req.session.id;
+                repo.addNew({username, session });
                 return res.status(200).redirect(encodeURIComponent('courses'));
             }
             

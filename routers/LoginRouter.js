@@ -1,6 +1,5 @@
 const express = require('express')
 const login = require('../controllers/LoginController.js');
-const csrf = require('csurf');
 
 const router = express.Router();
 
