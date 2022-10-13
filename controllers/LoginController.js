@@ -4,7 +4,6 @@ const path = require('path');
 const validator = require('express-validator');
 const studentModel = require('../models/StudentModel.js');
 const bcrypt = require('bcrypt');
-const repo = require('../repo/Repo');
 
 
 // Get request for login page
@@ -41,8 +40,8 @@ const handleLogin =  async (req, res) => {
         bcrypt.compare(password, student.pass, (err, result) => {
             
             if (result) {
-                const session = req.session.id;
-                repo.addNew({username, session });
+                var session = req.session;
+                session.username = username;
                 return res.status(200).redirect(encodeURIComponent('courses'));
             }
             
