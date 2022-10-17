@@ -13,4 +13,20 @@ const pointSchema = new mongoose.Schema ({
 
 const pointModel = mongoose.model('Points', pointSchema);
 
-module.exports = pointModel;
+async function addPoints(user, numPoints) {
+    let student = await pointModel.findOne({user: user});
+
+    if(!student) {
+        console.log('Error finding student: ' + user);
+        return;
+    }
+
+    let points = student.points + numPoints;
+
+    await pointModel.updateOne({user: user}, {points: points});
+}
+
+module.exports = {
+    pointModel,
+    addPoints
+};

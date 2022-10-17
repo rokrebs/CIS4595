@@ -1,4 +1,5 @@
 const express = require('express');
+const points = require('../models/PointModel')
 
 const router = express.Router();
 
@@ -7,6 +8,20 @@ router.get('/private', (req,res) => {
 
     if(req.session.username) {
         res.send({message: "You have access"});
+    }
+    else {
+        res.send({ message: "you Dont have access" });
+    }
+
+});
+
+// Test points only test for a
+// already logged in user
+router.get('/addPoints', (req,res) => {
+
+    if(req.session.username) {
+        points.addPoints(req.session.username,5);
+        res.send({message: 'Attempted to add 5 points'})
     }
     else {
         res.send({ message: "you Dont have access" });
