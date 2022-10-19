@@ -15,4 +15,8 @@ const classSchema = new mongoose.Schema ({
 
 const classModel = mongoose.model('Class', classSchema);
 
-module.exports = classModel;
+async function findClasses(student) {
+    return await classModel.find({students: student});
+}
+
+module.exports = findClasses;
