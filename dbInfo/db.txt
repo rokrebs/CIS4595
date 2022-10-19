@@ -8,3 +8,5 @@ Classes:
     MAT3000 : dg1, rk1
     COP4420 : nr1, rk1
     CYB4444 : js1, dg1
+Professors:
+    ok1 : prof
