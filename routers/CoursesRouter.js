@@ -1,5 +1,4 @@
 const express = require('express');
-const { CustomValidation } = require('express-validator/src/context-items');
 const classModel = require('../models/ClassModel');
 
 const router = express.Router();
@@ -18,7 +17,7 @@ router.get('/courses', (req,res) => {
             res.status(200).render('courses', {
                 courses: courseCodes,
                 courseName: courseNames
-        });
+        })
         })
         .catch(err => {
             console.log(err);

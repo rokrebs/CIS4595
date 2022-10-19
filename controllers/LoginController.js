@@ -1,5 +1,3 @@
-const bodyparser = require('body-parser');
-const mongoose = require('mongoose');
 const path = require('path');
 const validator = require('express-validator');
 const studentModel = require('../models/StudentModel.js');
