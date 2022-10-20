@@ -3,12 +3,14 @@ img {
     width: 100%;
 }
 
-.list > ul {
-    list-style-type: disc;
+#coursesDiv {
+    align-items:center;
+    justify-content: center;
+    padding-top: 2em;
+    
 }
 
-.list > ul li {
-    display: block;
-    border: 1px solid black;
-    list-style-position: inside;
+#course {
+    margin: 10px;
+    border-radius: 25px;
 }

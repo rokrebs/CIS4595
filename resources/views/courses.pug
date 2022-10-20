@@ -3,13 +3,14 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        <link rel="stylesheet" href="CSS/style.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+        <link href="CSS/style.css" rel="stylesheet">
         title Courses
     body
-        div.list
-            ul
-                each val, index in courses 
-                    li
-                        h= val
-                        p= courseName[index]
+    section(class="vh-100" style="background-image: url('images/UWFLogo.jpg');")
+        div(id="coursesDiv" class="list-group mb-6 mw-80 d-flex justify-content-center")
+            each val, index in courses 
+                div(id="course" class="list-group-item mb-6 text-dark w-75")
+                    h1(class="small")= val
+                    p1(class="small")= courseName[index]     
                 
