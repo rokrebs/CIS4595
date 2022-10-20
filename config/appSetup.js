@@ -4,10 +4,16 @@ const cookieParser = require('cookie-parser');
 const helmet = require('helmet');
 const loginRouter = require('./../routers/LoginRouter.js');
 const coursesRouter = require('./../routers/CoursesRouter.js');
-//const limiter = require('./../routers/middlewares/rateLimiter.js');
+const rateLimit = require('express-rate-limit');
 const session = require('express-session');
 const path = require('path')
 require('dotenv').config();
+const limiter = rateLimit({
+	windowMs: 15 * 60 * 1000, // 15 minutes
+	max: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
+	standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
+	legacyHeaders: false, // Disable the `X-RateLimit-*` headers
+})
 
 const app = express();
 
@@ -23,12 +29,12 @@ app.set('view engine', 'pug');
 /** ** SECURITY MIDDLEWARE *** */
 app.use(cookieParser());
 app.use(helmet.hidePoweredBy());
-//app.use(limiter);
+app.use(limiter);
 const oneHour = 100000 * 36;
 app.use(session({
     secret: process.env.SECRET,
     saveUninitialized: true,
-    cookie: { maxAge: oneHour },
+    cookie: { secure: true, maxAge: oneHour },
     resave: false
 })); 
 

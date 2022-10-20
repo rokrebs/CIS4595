@@ -3,7 +3,8 @@
         "browser": true,
         "es2021": true
     },
-    "extends": "airbnb-base",
+    "plugins": ["security"],
+    "extends": ["airbnb-base","plugin:security/recommended"],
     "overrides": [
     ],
     "parserOptions": {
@@ -11,6 +12,7 @@
         "sourceType": "module"
     },
     "rules": {
+        "no-plusplus":0,
         "no-console": 0,
         "no-unused-vars": ["error", { "vars": "all", "args": "none", "ignoreRestSiblings": false }],
         "import/extensions": [
