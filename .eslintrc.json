@@ -3,7 +3,6 @@
         "browser": true,
         "node": true
     },
-    "plugins": ["security"],
     "extends": ["airbnb-base","eslint:recommended","plugin:node/recommended"],
     "overrides": [
     ],
