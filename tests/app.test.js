@@ -1,7 +1,7 @@
-const request = require("supertest");
-const app = require("../config/appSetup");
+const request = require('supertest');
+const app = require('../config/appSetup');
 
-require("dotenv").config();
+require('dotenv').config();
 
 describe('Routers endpoint', () => {
   test('GET /', async () => {
@@ -21,7 +21,4 @@ describe('Routers endpoint', () => {
     expect(res.statusCode).toEqual(200);
     expect(res.header['content-type']).toBe('text/html; charset=UTF-8');
   });
-
-})
-
-
+});
