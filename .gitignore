@@ -7,8 +7,5 @@ node_modules/
 #environment variables
 #.env
 
-#Packages
-package-lock.json
-
 # Repo
 repository.json
