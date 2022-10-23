@@ -7,7 +7,7 @@
     "node": ">=18.10.0"
   },
   "scripts": {
-    "test": "jest --runInBand --detectOpenHandles  --testTimeout=10000 --forceExit",
+    "test": "jest --coverage --verbose --runInBand --detectOpenHandles  --testTimeout=10000 --forceExit",
     "start": "nodemon --ignore repository.json index.js",
     "start-dev": "nodemon --ignore repository.json index.js"
   },

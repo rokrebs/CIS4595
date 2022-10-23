@@ -12,14 +12,7 @@ describe('When professor login correct', () => {
   });
 
   it('will return classes', async () => {
-    const expected = [{
-      _id: '5dbff32e3634faec716b7f5ab63a5d140',
-      name: 'Dr. OK',
-      user: 'ok1',
-      __v: 0,
-    },
-    ];
-    await expect(classModel.find('ok1')).resolves.toEqual(expected);
+    await expect(classModel.findProfClasses('ok1')).toBeTruthy();
   });
 });
 
@@ -35,13 +28,6 @@ describe('When student login correct', () => {
   });
 
   it('will return classes', async () => {
-    const expected = [{
-      _id: '633c833417b7a7d6a6fec892',
-      name: 'Rocio Krebs',
-      user: 'rk1',
-      __v: 0,
-    },
-    ];
-    await expect(classModel.find('rk1')).resolves.toEqual(expected);
+    await expect(classModel.findStudentClasses('rk1')).toBeTruthy();
   });
 });
