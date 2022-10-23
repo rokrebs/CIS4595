@@ -8,4 +8,4 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       name: ESLint
-        - uses: stefanoeb/eslint-action@1.0.2
+      - uses: stefanoeb/eslint-action@1.0.2
