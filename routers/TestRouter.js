@@ -10,7 +10,7 @@ router.get('/private', (req,res) => {
         res.send({message: "You have access"});
     }
     else {
-        res.send({ message: "you Dont have access" });
+        res.send({ message: "you don't have access" });
     }
 
 });
@@ -24,7 +24,7 @@ router.get('/addPoints', (req,res) => {
         res.send({message: 'Attempted to add 5 points'})
     }
     else {
-        res.send({ message: "you Dont have access" });
+        res.send({ message: "you don't have access" });
     }
 
 });
