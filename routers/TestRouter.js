@@ -1,5 +1,5 @@
 const express = require('express');
-const points = require('../models/PointModel')
+const points = require('../models/PointModel.js')
 
 const router = express.Router();
 
