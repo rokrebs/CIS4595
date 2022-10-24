@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('../config/appSetup');
+const app = require('../config/appSetup.js');
 
 require('dotenv').config();
 
