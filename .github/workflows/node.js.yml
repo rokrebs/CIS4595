@@ -23,4 +23,4 @@ jobs:
     - run: npm init @eslint/config
     - run: npm run build --if-present
     - run: npm test
-    - run: npx eslint . --ext .js
+    - run: npx eslint . --ext .js --fix
