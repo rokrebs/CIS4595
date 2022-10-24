@@ -1,4 +1,4 @@
-const pointModel = require('../models/PointModel');
+const pointModel = require('../models/PointModel.js');
 
 describe('Points functionality', () => {
   beforeAll(() => {
