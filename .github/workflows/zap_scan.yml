@@ -1,3 +1,4 @@
+name: Zap Scan
 on:
   push:
     branches: [ "main" ]
