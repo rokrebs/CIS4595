@@ -42,7 +42,7 @@ app.use(session({
 app.use('/', loginRouter);
 app.use('/', coursesRouter);
 // for testing authorized/logged in users can be replaced
-const testRouter = require('../routers/TestRouter');
+const testRouter = require('../routers/TestRouter.js');
 app.use('/', testRouter);
 
 module.exports = app;

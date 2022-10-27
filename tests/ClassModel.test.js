@@ -1,4 +1,4 @@
-const classModel = require('../models/ClassModel');
+const classModel = require('../models/ClassModel.js');
 
 describe('When professor login correct', () => {
   beforeAll(() => {
