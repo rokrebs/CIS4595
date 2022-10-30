@@ -1,9 +1,8 @@
-const path = require('path');
-const validator = require('express-validator');
-const studentModel = require('../models/StudentModel.js');
+// const validator = require('express-validator');
+// const studentModel = require('../models/StudentModel.js');
 const classLookup = require('../models/ClassModel.js');
 
-const profModel = require('../models/ProfessorModel.js');
+// const profModel = require('../models/ProfessorModel.js');
 
 const coursesView = (req, res) => {
   if (req.session.username) {

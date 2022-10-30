@@ -1,4 +1,4 @@
-const express = require('express')
+const express = require('express');
 const login = require('../controllers/LoginController.js');
 
 const router = express.Router();
@@ -12,6 +12,5 @@ router.post('/', login.handleLogin);
 router.get('/profLogin', login.profLoginView);
 router.get('/invalidProfCredentials', login.invalidProfCredentials);
 router.post('/profLogin', login.handleProfLogin);
-
 
 module.exports = router;

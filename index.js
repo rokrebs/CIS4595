@@ -4,7 +4,7 @@ require('dotenv').config();
 
 const PORT = process.env.PORT || 3000;
 
-/**** SERVER DATABASE START ****/
+/** ** SERVER DATABASE START *** */
 
 // Start Server & Database Connection
 // Note the dg114:test part is the user pass for database
