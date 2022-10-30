@@ -19,11 +19,11 @@ const classSchema = new mongoose.Schema ({
 const classModel = mongoose.model('Class', classSchema);
 
 async function findStudentClasses(student) {
-    return await classModel.find({students: student});
+    return classModel.find({students: student});
 }
 
 async function findProfClasses(prof) {
-    return await classModel.find({professor: prof});
+    return classModel.find({professor: prof});
 }
 
 module.exports = {
