@@ -1,8 +1,8 @@
-name: Zap Scan
+name: Security Scan
 on: [push]
 
 jobs:
-  zap_scan:
+  ZAP_scan:
     runs-on: ubuntu-latest
     name: Scan the webapplication
     steps:
@@ -10,3 +10,11 @@ jobs:
         uses: zaproxy/action-baseline@v0.7.0
         with:
           target: 'https://www.zaproxy.org'
+  Snyk_scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
