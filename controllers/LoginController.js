@@ -67,7 +67,7 @@ const handleProfLogin = async (req, res) => {
   try {
     const errors = validator.validationResult(req);
     if (!errors.isEmpty()) {
-       return res.status(422).json({ errors: errors.array() });
+      return res.status(422).json({ errors: errors.array() });
     }
 
     console.log(req.body);
