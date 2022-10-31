@@ -12,8 +12,9 @@
         "sourceType": "module"
     },
     "rules": {
-        "no-plusplus":0,
+        "no-plusplus": 0,
         "no-console": 0,
+        "consistent-return": 0,
         "no-unused-vars": ["error", { "vars": "all", "args": "none", "ignoreRestSiblings": false }],
         "import/extensions": [
             "error",
