@@ -9,11 +9,4 @@ jobs:
         uses: zaproxy/action-baseline@v0.7.0
         with:
           target: 'https://www.zaproxy.org'
-  Snyk_scan:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - name: Snyk Scan
-        uses: snyk/actions/node@master
-        env:
-          SNYK_TOKEN: ${{9715241f-7757-417f-8069-8961a1511533}}
+  
