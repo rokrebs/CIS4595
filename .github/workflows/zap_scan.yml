@@ -16,4 +16,4 @@ jobs:
       - name: Snyk Scan
         uses: snyk/actions/node@master
         env:
-          SNYK_TOKEN: ${{ 9715241f-7757-417f-8069-8961a1511533 }}
+          SNYK_TOKEN: ${{9715241f-7757-417f-8069-8961a1511533}}
